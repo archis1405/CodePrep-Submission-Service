@@ -1,16 +1,18 @@
-async function pingRequest(fastify, options) {
+async function pingRequest(req, res) {
+
     console.log(this.testService);
 
     const response = await this.testService.pingCheck();
     return res.send({data: response});
-
 }
 
-async function createSumbission(req, res) {
+
+async function createSubmission(req, res) {
     
+
 }
 
-module.exports = {
+module.exports =  {
     pingRequest,
-    createSumbission
+    createSubmission
 };
