@@ -1,7 +1,7 @@
 const fastify = require('fastify')({ logger: true });
 const app = require('./app');
-
-const PORT = 3000;
+const serverConfig = require('./config/serverConfig');
+require('dotenv').config();
 
 fastify.register(app);
 
