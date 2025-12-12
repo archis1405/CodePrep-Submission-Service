@@ -13,9 +13,7 @@ class SubmissionService {
         const submission = this.submissionRepository.createSubmission(submission);
         
         if(!submission){
-            throw {
-                message: "Not able to create submission"
-            };
+            throw new SubmissionCreationError('Failed to create a submission in the repository');
         }
 
         console.log(submission);
