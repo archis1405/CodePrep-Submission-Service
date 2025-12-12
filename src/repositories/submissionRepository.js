@@ -11,4 +11,4 @@ class SubmissionRepository {
     }
 }
 
-module.exports = SubmissionRepository;  
+module.exports = SubmissionRepository;   
