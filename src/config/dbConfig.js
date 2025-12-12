@@ -14,3 +14,5 @@ async function connectToDB(){
         console.error(error);
     }
 }
+
+module.exports = connectToDB;
