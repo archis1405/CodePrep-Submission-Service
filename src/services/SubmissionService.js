@@ -10,18 +10,17 @@ class SubmissionService {
     }
 
     async addSubmission(submission){
-        const submission = this.submissionRepository.createSubmission(submission);
+        const createdSubmission = this.submissionRepository.createSubmission(submission);
         
-        if(!submission){
+        if (!createdSubmission) {
             throw new SubmissionCreationError('Failed to create a submission in the repository');
         }
 
-        console.log(submission);
+        console.log(createdSubmission);
 
-        const response = await SubmissionProducer(submission);
-        return {queueResponse: response, submission};
+        const response = await SubmissionProducer(createdSubmission);
+        return { queueResponse: response, submission: createdSubmission };
     }
-    
 }
 
 module.exports = SubmissionService;

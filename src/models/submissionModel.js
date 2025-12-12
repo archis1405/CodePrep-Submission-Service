@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const submiSchema = new mongoose.Schema({
+const submissionSchema = new mongoose.Schema({
     
     userId: {
         type: String,
