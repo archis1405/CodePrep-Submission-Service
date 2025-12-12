@@ -1,3 +1,5 @@
+const SubmissionProducer = require('../producer/SubmissionQueueProcuder');
+
 class SubmissionService {
     constructor(){
 
@@ -8,7 +10,7 @@ class SubmissionService {
     }
 
     async addSubmission(submission){
-        
+        const response = await SubmissionProducer(submission);
     }
     
 }
