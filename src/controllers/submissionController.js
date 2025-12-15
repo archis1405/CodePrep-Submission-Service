@@ -7,15 +7,19 @@ async function pingRequest(req, res) {
 }
 
 
-    async function createSubmission(req, res) {
-        const response = await this.submissionService.addSubmission(req.body);
-        return res.status(201).send({
+    async function createSubmission(req, reply) {
+    try {
+        const result = await req.server.submissionService.addSubmission(req.body);
+        reply.code(201).send({
             error: {},
-            data: response,
+            data: result,
             success: true,
             message: 'Created submission successfully'
         });
+    } catch (err) {
+        reply.code(400).send({ error: err.message });
     }
+}
 
 module.exports =  {
     pingRequest,

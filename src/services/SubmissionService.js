@@ -10,7 +10,7 @@ class SubmissionService {
     }
 
     async addSubmission(submission){
-        const createdSubmission = this.submissionRepository.createSubmission(submission);
+        const createdSubmission = await this.submissionRepository.createSubmission(submission);
         
         if (!createdSubmission) {
             throw new SubmissionCreationError('Failed to create a submission in the repository');
