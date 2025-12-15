@@ -7,14 +7,14 @@ function errorHandler(error, request, reply) {
             success: false,
             message: error.message,
             error: error.details,
-            data: {} // Because this is an exception so no data is going to be provided.
+            data: {} 
         });
     } else {
         reply.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
             success: false,
             message: "something went wrong!",
-            error: error.message || error, // Ensure `error.message` is used if available
-            data: {} // Because this is an exception so no data is going to be provided.
+            error: error.message || error, 
+            data: {} 
         });
     }
 }
